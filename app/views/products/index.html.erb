@@ -1,23 +1,9 @@
-<% first_product = Product.first %>
-<p>
-  Product Name: "<%= first_product.name %>" costs $<%= first_product.price %>
-</p>
-<p>
-  The seller for this product is named '<%= first_product.user.name %>'
-  </p>
-  <p>There are <%= Product.all.count %> books in the system.</p>
-  <h2>Sale</h2>
-  <% cheap_book1 = Product.where('price < 10').first %>
-  <p>Book: <%= cheap_book1.name %></p>
-  <p>Price: $<%= cheap_book1.price %></p>
-  <p>Seller: <%= cheap_book1.user.name %></p>
- 
-  <% cheap_book2 = Product.where('price < 10').second %>
-  <p>Book: <%= cheap_book2.name %></p>
-  <p>Price: $<%= cheap_book2.price %></p>
-  <p>Seller: <%= cheap_book2.user.name %></p>
-  
-  <% cheap_book3 = Product.where('price < 10').third %>
-  <p>Book: <%= cheap_book3.name %></p>
-  <p>Price: $<%= cheap_book3.price %></p>
-  <p>Seller: <%= cheap_book3.user.name %></p>
+<% lots_of_products = Product.includes(:user).all %>
+<ul>
+  <% lots_of_products.each do |product| %>
+    <li>
+      Product Name: "<%= product.name %>" costs $<%= product.price %>
+      Sold by <%= product.user.name %>
+    </li>
+  <% end %>
+</ul>
