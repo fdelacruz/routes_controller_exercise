@@ -198,16 +198,20 @@ Visit this url: [localhost:3000/users](http://localhost:3000/users) and then fin
 
 
 HTTP verb used in this request:
-URL:
-Controller Name:
-Controller Action:
-View File Name:
-Layout File Name:
-Response code of the request:
+URL: /users
+Controller Name: UsersController
+Controller Action: index
+View File Name: users/index.html.erb
+Layout File Name: application
+Response code of the request: 200
 
 You should also notice a new line or two that we didn't see before, what is it (copy and paste, hint: after User Load) ?
 
+SELECT "users".* FROM "users"
+
 Why do you think this line is there?
+
+It is the SQL query.
 
 
 
