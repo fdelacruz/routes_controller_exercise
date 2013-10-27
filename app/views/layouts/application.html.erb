@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= link_to "User List", users_path %>
+  <%= link_to "Products List", products_path %>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
